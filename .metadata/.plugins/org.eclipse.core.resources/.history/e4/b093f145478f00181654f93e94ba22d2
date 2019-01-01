@@ -1,0 +1,27 @@
+package seleniumwd;
+
+import java.io.File;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+
+public class RediffProgram {
+
+	public static void main(String[] args) {
+		
+		File pathBinary=new File("C:\\Users\\ext-sdasari\\AppData\\Local\\Mozilla Firefox\\firefox.exe");
+		WebDriver driver = new FirefoxDriver(new FirefoxBinary(pathBinary),new FirefoxProfile());
+		driver.get("http://www.rediff.com/");
+		
+		RediffHomePage rhp = new RediffHomePage();
+		rhp.RegistrationLink.click();
+		RediffRegistrationPage rrp = new RediffRegistrationPage();
+		rrp.Uid.sendKeys("Sneha Dasari");
+		driver.findElement(rrp.pass).sendKeys("Password2018");
+		driver.close();
+
+	}
+
+}

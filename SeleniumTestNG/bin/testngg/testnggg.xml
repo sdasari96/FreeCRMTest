@@ -1,0 +1,7 @@
+<Suite name="RT">
+<Test name="RT">
+<classes>
+<class name="testngg.Test1">
+</classes>
+</Test>
+</Suite>
